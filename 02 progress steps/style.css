@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #383838;
+}
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  width: 90vw;
+}
+.prog{
+  background-color: var(--line-border-fill);
+  height: 4px;
+  width: 0%;
+  position: absolute;
+  top:50%;
+  left: 0;
+  z-index: 0;
+  transition:  .4s ease-in;
+}
+.prog-steps::before{
+  content: '';
+  background-color: var(--line-border-empty);
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top:50%;
+  left: 0;
+  z-index: -2;
+}
+.prog-container{
+  /* border: solid 1px; */
+  max-width: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.prog-steps, .prog-nav{
+  /* border: solid; */
+  padding: 1em;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.prog-steps{
+  width: 60vw;
+  /* background-color:rgba(0, 0, 255, 0.237); */
+}
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px var(--line-border-empty);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.circle.active{
+  border: solid 3px var(--line-border-fill);
+}
+
+button{
+  color: white;
+  background-color: var(--line-border-fill);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+
+}
+button:active{
+  transform: scale(1.1);
+}
+button:focus{
+  outline: 0;
+}
+button:disabled{
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
+
+@media (max-width:505px){
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5){
+    /* opacity: 0; */
+    display: none;
+  }
+  
+}
